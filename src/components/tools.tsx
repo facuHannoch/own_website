@@ -1,5 +1,5 @@
 import { Content } from "../pages";
-import { ToolsTitle, P, TitleH2 } from "./Titles";
+import { ToolsTitle, P, TitleH2 } from "./titles";
 import Image from 'next/image'
 
 export default function Tools({ tools }: { tools: Array<Content["tool"]> }) {

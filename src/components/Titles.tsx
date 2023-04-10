@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface TitleInterface {
     title: string;
     extraStyles?: string
@@ -11,7 +13,7 @@ interface PInterface {
 
 interface AInterface {
     text: string
-    link: string
+    href: string
     extraStyles?: string
 }
 export function P(props: PInterface) {
@@ -46,7 +48,10 @@ export function ExperiencesTitle(props: TitleInterface) {
 }
 
 export function A(props: AInterface) {
-    return <a href={props.link} className="text-2xl text-accent-color hover:text-black">{props.text}</a>
+    return <a href={props.href} className="text-2xl text-accent-color hover:text-black">{props.text}</a>
+}
+export function CustomLink(props: AInterface) {
+    return <Link href={props.href} className="text-2xl text-accent-color hover:text-black">{props.text}</Link>
 }
 
 export default { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P }

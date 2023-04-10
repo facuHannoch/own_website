@@ -1,4 +1,4 @@
-import { P, TitleH2 } from './Titles'
+import { P, TitleH2 } from './titles'
 import { Content } from '../pages/index'
 import Image from 'next/image'
 import jsonData from '../../public/data/data.json'

@@ -1,4 +1,4 @@
-import { ExperiencesTitle, P } from "./Titles"
+import { ExperiencesTitle, P } from "./titles"
 import Image from 'next/image'
 
 export default function Experiences({ experiences, tools }: any) {
