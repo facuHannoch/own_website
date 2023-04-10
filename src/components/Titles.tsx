@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
 interface TitleInterface {
     title: string;
@@ -12,10 +13,26 @@ interface PInterface {
 }
 
 interface AInterface {
-    text: string
+    // text: string
     href: string
-    extraStyles?: string
+    className?: string
 }
+
+interface labelInterface {
+    htmlFor: string
+    className?: string
+    // children: PropsWithChildren
+}
+
+interface InputInterface {
+    id: string
+    type: string
+    name: string
+    autoComplete: string
+    required: boolean
+    className?: string
+}
+
 export function P(props: PInterface) {
     return <p className={'text-slate-500 ' + props.extraStyles}>{props.text}</p>
 }
@@ -47,12 +64,37 @@ export function ExperiencesTitle(props: TitleInterface) {
     return <p className='text-2xl sm:text-3xl tracking-tight text-gray-800 my-2 text-center'>{props.title}</p>
 }
 
-export function A(props: AInterface) {
-    return <a href={props.href} className="text-2xl text-accent-color hover:text-black">{props.text}</a>
+export function A(props: PropsWithChildren<AInterface>) {
+    return <a href={props.href} className={` text-2xl text-accent-color hover:text-black ${props.className}`}>{props.children}</a>
 }
-export function CustomLink(props: AInterface) {
-    return <Link href={props.href} className="text-2xl text-accent-color hover:text-black">{props.text}</Link>
+export function CustomLink(props: PropsWithChildren<AInterface>) {
+    return <Link href={props.href} className={` "text-2xl text-accent-color hover:text-black ${props.className}`}>{props.children}</Link>
 }
+
+export function Label(props: PropsWithChildren<labelInterface>) {
+    return <label htmlFor={props.htmlFor} className={` ${props.className}`}>{props.children}</label>
+}
+
+export function Input(props: InputInterface) {
+    return <input
+        className={`min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-secondary-color shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 bg-slate-500 m-2 ${props.className}`}
+        id={props.id}
+        type={props.type}
+        name={props.name}
+        autoComplete={props.autoComplete}
+        required={props.required}
+    />
+}
+
+export function Textarea() {
+    return <textarea
+        className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 bg-slate-500 m-2"
+        id="frm-message"
+        rows={6}
+        name="message">
+    </textarea>
+}
+
 
 export default { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P }
 

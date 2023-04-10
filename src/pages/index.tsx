@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import CallToAction from '../components/last-call-to-action'
 import Testimonial from '../components/testimonials'
 import '../components/titles'
-import { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P } from '../components/titles'
+import { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P, CustomLink } from '../components/titles'
 
 import data from '../../public/data/data.json'
 import Header from '../components/header'
@@ -12,6 +12,7 @@ import Tools from '../components/tools'
 import Newsletter from '../components/newsletter'
 import Experiences from '../components/experiences'
 import Footer from '@/components/footer'
+import ContactForm from '@/components/contact-form'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,7 +54,7 @@ export default function Home() {
           {/* <TitleH1 title={"Elevate your digital presence with our expert web and mobile development services"} /> */}
         </div>
 
-        <Newsletter />
+        {/* <Newsletter /> */}
 
       </section>
 
@@ -74,10 +75,10 @@ export default function Home() {
         <Testimonial testimonials={testimonials} />
       </section>
 
-      {/* <section className='flex min-h-screen flex-col items-start sm:p-32 p-4'>
-        <Title title='Testimonials' />
+      {/* <section id="get-in-touch" className='flex min-h-screen flex-col items-start sm:p-32 sm:pt-2 p-4'>
+        <Title title="Let's get in touch" extraStyles='mb-4'/>
+        <ContactForm />
       </section> */}
-
       <Footer />
     </main >
   )
@@ -91,16 +92,16 @@ interface TransitionButtonInterface {
 
 function TransitionButton(props: TransitionButtonInterface) {
   return <div className="mt-2 flex items-center justify-center gap-x-6">
-    <a
-      href="#"
+    <CustomLink
+      href="#get-in-touch"
       className="rounded-md bg-slate-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary-color focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
-      2xl:p-5 2xl:text-2xl"
+      2xl:p-5 2xl:text-2xl hover:text-white"
     >
       {props.text}
-    </a>
-    <a href="#portfolio" className="text-sm font-semibold leading-6 text-gray-900 2xl:text-2xl">
+    </CustomLink>
+    <CustomLink href="#portfolio" className="text-sm font-semibold leading-6 text-gray-900 2xl:text-2xl">
       See my portfolio <span aria-hidden="true">→</span>
-    </a>
+    </CustomLink>
   </div>
 }
 
