@@ -1,0 +1,147 @@
+{
+    "tools": [
+        {
+            "image": "icons/flutter.svg",
+            "name": "Flutter",
+            "description": "Flutter is a well known framework used to build mobile applications, for both android and IOs"
+        },
+        {
+            "image": "icons/react.svg",
+            "name": "React",
+            "description": "React is the most used Javascript librery for creating responsive, and fully interactive websites, providing a versatile set of tools to create robust and performant web applications."
+        },
+        {
+            "image": "icons/firebase.svg",
+            "name": "Firebase",
+            "description": "Firebase is a suite of tools that helps businesses create engaging web and mobile apps quickly and easily, with features like real-time data syncing, analytics, and cloud messaging that enable better customer engagement and retention."
+        },
+        {
+            "image": "icons/mysql.svg",
+            "name": "MySQL",
+            "description": "MySQL is a reliable and scalable database management system that enables businesses to store and analyze large amounts of data."
+        },
+        {
+            "image": "icons/mongodb.svg",
+            "name": "MongoDB",
+            "description": "MongoDB is a flexible and scalable NoSQL database that is widely used for modern web applications. With MongoDB, businesses can store, manage, and analyze unstructured data quickly and easily, while ensuring data security and performance."
+        },
+        {
+            "image": "icons/aws.svg",
+            "name": "AWS",
+            "description": "Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster."
+        },
+        {
+            "image": "icons/php.svg",
+            "name": "PHP",
+            "description2": "Flutter is a well known framework used to build mobile applications, for both android and IOs"
+        },
+        {
+            "image": "icons/html5.svg",
+            "name": "HTML5"
+        },
+        {
+            "image": "icons/css3.svg",
+            "name": "CSS3"
+        },
+        {
+            "image": "icons/android-original.svg",
+            "name": "Android"
+        },
+        {
+            "image": "icons/javascript.svg",
+            "name": "JavaScript"
+        },
+        {
+            "image": "icons/typescript.svg",
+            "name": "TypeScript"
+        },
+        {
+            "image": "icons/nextjs.svg",
+            "name": "NextJs"
+        },
+        {
+            "image": "icons/tailwindcss.svg",
+            "name": "Tailwind CSS"
+        },
+        {
+            "image": "icons/nodejs.svg",
+            "name": "NodeJs"
+        },
+        {
+            "image": "icons/ios.svg",
+            "name": "IOS"
+        },
+        {
+            "image": "icons/typescript.svg",
+            "lowLevel": true
+        },
+        {
+            "image": "icons/mongodb.svg",
+            "lowLevel": true
+        },
+        {
+            "image": "icons/nextjs.svg",
+            "lowLevel": true
+        },
+        {
+            "image": "icons/tailwindcss.svg",
+            "lowLevel": true
+        },
+        {
+            "image": "icons/nodejs.svg",
+            "lowLevel": true
+        },
+        {
+            "image": "icons/ios.svg",
+            "lowLevel": true
+        }
+    ],
+    "experiences": [
+        {
+            "image": "",
+            "title": "Mobile App Development \"VThePeople\" in Flutter",
+            "description": "Complex application who served as a tool for poeple in India to create communities, being able to inscribe their children in school, ask for transport, rent, medical services, delivery, etc. Worked as a mobile developer for building and mantaining a complex application. Involved in the design of the application, and some of the technical questions.",
+            "toolsUsed": [
+                "Flutter",
+                "Firebase"
+            ]
+        },
+        {
+            "image": "",
+            "title": "Blog from Scratch with PHP",
+            "description": "Work for a client who wanted a blog built for herself, but built from the ground with PHP.I managed all the database and logic for the backend, using a MySQL database solution, and deployed the blog in a AWS Beanstalk environment.",
+            "toolsUsed": [
+                "PHP",
+                "MySQL",
+                "AWS"
+            ]
+        },
+        {
+            "image": "",
+            "title": "Keep demo app",
+            "description": "A website as Google Keep, with the same functionality built with React, and NodeJs.",
+            "toolsUsed": [
+                "React",
+                "JavaScript"
+            ]
+        },
+        {
+            "image": "",
+            "title": "This website!",
+            "description": "Although a simple project, it is created as well with the latest technologies, using NextJs and React to provide a fast user experience, and doing a Static Site Generation",
+            "toolsUsed": [
+                "NextJs"
+            ]
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Hadrian",
+            "cite": "Facundo really went the extra mile to deliver a perfect work in a very communicative way. I would highly recommend his services for any JS/PHP mission. Thanks again for your hard work !"
+        },
+        {
+            "name": "",
+            "cite": "Facundo did a good job, highly recommended."
+        }
+    ]
+}
