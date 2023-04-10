@@ -96,5 +96,5 @@ export function Textarea() {
 }
 
 
-export default { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P }
+// export default { Title, TitleH1, TitleH2, ToolsTitle, ExperiencesTitle, P }
 

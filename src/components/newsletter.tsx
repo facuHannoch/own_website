@@ -4,10 +4,10 @@ export default function Newsletter() {
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 sm:flex sm:flex-col 2xl:items-center" >
         <div className="max-w-xl lg:max-w-lg" >
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl" > Subscribe to my newsletter </h2>
-          < p className="mt-4 text-lg leading-8 text-gray-300" >
+          <p className="mt-4 text-lg leading-8 text-gray-300" >
             {/* I regularly send useful information for people like you, and it is totally free. */}
             {/* Real-World Examples and Case Studies of Successful Web and Mobile Development Projects */}
-            Ready to gain an edge over your competition ? Subscribe to my email list and receive regular updates and expert advice that can give you the boost you need.And the best part ? It's all free!
+            Ready to gain an edge over your competition ? Subscribe to my email list and receive regular updates and expert advice that can give you the boost you need.And the best part ? It&apos;s all free!
           </p>
           <div className="mt-6 flex max-w-md gap-x-4" >
             <label htmlFor="email-address" className="sr-only" >

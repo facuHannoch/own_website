@@ -9,7 +9,7 @@ export default function CookiesPolicy() {
     return <main>
         <Header />
         <section className="flex min-h-screen flex-col sm:flex-row 2xl:flex-col items-start p-8 py-24 sm:p-32 sm:pr-12">
-            <CustomLink href="/" text="Home Page" />
+            <CustomLink href="/">Home Page</CustomLink>
             <Title title={"Use of Cookies"} />
             <P text={" This page uses cookies to provide you with a better experience in it."} />
             <TitleH2 title={"What are Cookies?"} />

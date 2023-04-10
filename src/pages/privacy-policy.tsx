@@ -9,7 +9,7 @@ export default function CookiesPolicy() {
     return <main>
         <Header />
         <section className="flex min-h-screen flex-col sm:flex-row 2xl:flex-col items-start p-8 py-24 sm:p-32 sm:pr-12">
-            <CustomLink href="/" text="Home Page" />
+            <CustomLink href="/">Home Page</CustomLink>
             <Title title={"Privacy Policy"} />
             <P text={"This page wants to ensure that your privacy is protected and this privacy policy relates to how you use and protect any information provided to this page when you use this website. Any information you provide will only be used in accordance with this privacy statement."} />
             <P text={"This Privacy Policy governs the way that this page collects, uses, maintains and discloses information collected from users (each, a \"User\") of the website <a href=\".\">http://www.appneft.vercel.app/> (\"Site\"). This privacy policy applies to the Site and to all products and services offered by this page."}/>

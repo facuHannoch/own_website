@@ -27,6 +27,7 @@ export default function Testimonial({ testimonials }: any) {
         </div>
 
     </div>
+    
 }
 
 export async function getStaticProps({ params }: any) {

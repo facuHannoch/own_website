@@ -2,21 +2,28 @@ import { ExperiencesTitle, P } from "./titles"
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function Experiences({ experiences, tools }: any) {
-    const pos: Array<number> = []
-    const setPos: Array<any/* Dispatch<SetStateAction<number>> */> = []
 
+
+export default function Experiences({ experiences, tools }: any) {
+    const posArr: Array<number> = []
+    // const setPos: Array<any/* Dispatch<SetStateAction<number>> */> = []
     experiences.forEach((e: any) => {
-        var [posX, setPosX] = useState(0)
-        pos.push(posX)
-        setPos.push(setPosX)
+        posArr.push(0)
+        // pos.push(posX)
+        // setPos.push(setPosX)
     });
+
+    var [pos, setPos] = useState(posArr) // To fix 
 
     console.log(experiences[2].images)
 
+    function changePos(index: number, e:any) {
+        // setPos[index](e.images.length == (pos[index] + 1) ? 0 : pos[index] + 1)
+    }
+
     return <div>{
         experiences.map((e: any, index: number) =>
-            <div className='p-4 sm:m-8 my-8 ring-1 sm:rounded-lg sm:px-10 ring-white bg-white flex w-full shadow-md hover:shadow-lg'>
+            <div key={index} className='p-4 sm:m-8 my-8 ring-1 sm:rounded-lg sm:px-10 ring-white bg-white flex w-full shadow-md hover:shadow-lg'>
                 {/* sm:max-w-lg */}
                 <div className='mr-5 w-full'>
                     <ExperiencesTitle title={e.title} />
@@ -25,7 +32,7 @@ export default function Experiences({ experiences, tools }: any) {
                         <div className='flex pt-8'>
                             <Image src={e.images[pos[index]]} alt={e.title} width={400} height={40} className='w-4/5 2xl:w-auto bg-black' />
 
-                            <button className='' onClick={(event) => setPos[index](e.images.length == (pos[index] + 1) ? 0 : pos[index] + 1)}>
+                            <button className='' onClick={(event) => changePos(index, e)}>
                                 <Image className='mx-auto hover:bg-white rounded-lg transition ease-in-out hover:scale-100 hover:translate-y-0.5' src={"/icons/arrow-right.svg"} alt={"Next testimonial"} width={40} height={40} />
                             </button>
 
@@ -59,4 +66,5 @@ export default function Experiences({ experiences, tools }: any) {
         )
         return paths
     }
+
 }

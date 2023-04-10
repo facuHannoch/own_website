@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 export default function Tools({ tools }: { tools: Array<Content["tool"]> }) {
   return <div className='flex flex-row flex-wrap'>
-    {tools.filter((e: Content["tool"]) => e.description).map((e: Content["tool"]) =>
-      <div >
+    {tools.filter((e: Content["tool"]) => e.description).map((e: Content["tool"], index: number) =>
+      <div key={index}>
         {!e.description ?
           <div className='p-2'>
             <Image
@@ -45,8 +45,8 @@ export default function Tools({ tools }: { tools: Array<Content["tool"]> }) {
       <div>
         <TitleH2 title={""} />
         <div className='flex flex-row flex-wrap'>
-          {tools.filter((e: Content["tool"]) => !e.description && !e.lowLevel).map((e: Content["tool"]) =>
-            <div className='p-2 '>
+          {tools.filter((e: Content["tool"]) => !e.description && !e.lowLevel).map((e: Content["tool"], index:number) =>
+            <div key={index} className='p-2 '>
               <Image
                 className=" relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mx-auto"
                 src={e.image}
@@ -64,8 +64,8 @@ export default function Tools({ tools }: { tools: Array<Content["tool"]> }) {
       <div>
         <TitleH2 title={"I have also used "} />
         <div className='flex flex-row flex-wrap'>
-          {tools.filter((e: Content["tool"]) => e.lowLevel).map((e: Content["tool"]) =>
-            <div className='p-2 '>
+          {tools.filter((e: Content["tool"]) => e.lowLevel).map((e: Content["tool"], index:number) =>
+            <div key={index} className='p-2 '>
               <Image
                 className=" relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert mx-auto"
                 src={e.image}
