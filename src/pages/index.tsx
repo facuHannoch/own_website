@@ -14,6 +14,8 @@ import Experiences from '../components/experiences'
 import Footer from '@/components/footer'
 import ContactForm from '@/components/contact-form'
 
+import { useTheme } from 'next-themes'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export type Content = {
@@ -35,6 +37,13 @@ export type Content = {
   }
 }
 
+const Button = () => {
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
+  return <button
+    onClick={() => theme == "dark" ? setTheme('light') : setTheme('dark')}>Toggle</button>
+}
 
 const { tools, experiences, testimonials } = JSON.parse(JSON.stringify(data));
 
@@ -46,6 +55,7 @@ export default function Home() {
         <div className='flex flex-col sm:items-start items-center pb-8 2xl:mx-auto '>
           <Title title={"Facundo Hannoch"} />
           <TitleH1 title={"Fullstack Software Developer"} />
+          {Button()}
           <div className='py-4 sm:items-start items-center'>
             <TitleH2 title={"Do you need a professional website?"} extraStyles='text-accent-color sm:text-3xl hover:text-black' />
             <TitleH2 title={"I can make it for you"} extraStyles='text-black sm:text-3xl hover:font-bold' />
@@ -54,7 +64,7 @@ export default function Home() {
           {/* <TitleH1 title={"Elevate your digital presence with our expert web and mobile development services"} /> */}
         </div>
 
-        {/* <Newsletter /> */}
+        <Newsletter />
 
       </section>
 
@@ -75,10 +85,10 @@ export default function Home() {
         <Testimonial testimonials={testimonials} />
       </section>
 
-      {/* <section id="get-in-touch" className='flex min-h-screen flex-col items-start sm:p-32 sm:pt-2 p-4'>
+      <section id="get-in-touch" className='flex min-h-screen flex-col items-start sm:p-32 sm:pt-2 p-4'>
         <Title title="Let's get in touch" extraStyles='mb-4'/>
         <ContactForm />
-      </section> */}
+      </section>
       <Footer />
     </main >
   )

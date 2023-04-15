@@ -122,7 +122,7 @@
             ]
         },
         {
-            "images": [],
+            "images": ["/project-images/vanilla-js-ecommerce/image-1.jpg"],
             "title": "Ecommerce website built with JavaScript (Demo)",
             "description": "An ecommerce website in which users can select a varierity of forniture products, add to cart, and what you would expect from a shop websit",
             "toolsUsed": [
@@ -131,7 +131,7 @@
             ]
         },
         {
-            "images": [],
+            "images": ["/project-images/keeper-demo/image-1.jpg", "/project-images/keeper-demo/image-2.jpg"],
             "title": "Keep demo app",
             "description": "A website as Google Keep, with the same functionality built with React, and NodeJs.",
             "toolsUsed": [

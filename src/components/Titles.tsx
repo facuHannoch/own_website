@@ -34,7 +34,7 @@ interface InputInterface {
 }
 
 export function P(props: PInterface) {
-    return <p className={'text-slate-500 ' + props.extraStyles}>{props.text}</p>
+    return <p className={'text-paragraph-text-color ' + props.extraStyles}>{props.text}</p>
 }
 export function P2(props: PInterface) {
     return <p className={'text-slate-800 text-2xl ' + props.extraStyles}>{props.text}</p>
@@ -42,11 +42,11 @@ export function P2(props: PInterface) {
 
 
 export function Title(props: TitleInterface) {
-    return <p className={"text-4xl sm:text-6xl font-bold tracking-tight text-gray-800 py-1 m " + props.extraStyles}>{props.title}</p>
+    return <p className={"text-4xl sm:text-6xl font-bold tracking-tight text-first-text-color py-1 m " + props.extraStyles}>{props.title}</p>
 
 }
 export function TitleH1(props: TitleInterface) {
-    return <p className='text-2xl italic sm:text-2xl tracking-tight text-gray-900 my-2'>{props.title}</p>
+    return <p className='text-2xl italic sm:text-2xl tracking-tight text-second-text-color my-2'>{props.title}</p>
 }
 
 export function TitleH2(props: TitleInterface) {
@@ -55,20 +55,20 @@ export function TitleH2(props: TitleInterface) {
 }
 
 export function ToolsTitle(props: TitleInterface) {
-    var p: string = 'text-2xl sm:text-3xl text-center tracking-tight text-gray-800 my-2 '
+    var p: string = 'text-2xl sm:text-3xl text-center tracking-tight text-first-text-color my-2 '
     p = p.concat(props.centered ? '' : 'sm:text-start')
     return <p className={p}>{props.title}</p>
 }
 
 export function ExperiencesTitle(props: TitleInterface) {
-    return <p className='text-2xl sm:text-3xl tracking-tight text-gray-800 my-2 text-center'>{props.title}</p>
+    return <p className='text-2xl sm:text-3xl tracking-tight text-first-text-color my-2 text-center'>{props.title}</p>
 }
 
 export function A(props: PropsWithChildren<AInterface>) {
-    return <a href={props.href} className={` text-2xl text-accent-color hover:text-black ${props.className}`}>{props.children}</a>
+    return <a href={props.href} className={` text-2xl text-accent-color hover:text-text-selected-inverted ${props.className}`}>{props.children}</a>
 }
 export function CustomLink(props: PropsWithChildren<AInterface>) {
-    return <Link href={props.href} className={` "text-2xl text-accent-color hover:text-black ${props.className}`}>{props.children}</Link>
+    return <Link href={props.href} className={` "text-2xl text-accent-color hover:text-text-selected-inverted ${props.className}`}>{props.children}</Link>
 }
 
 export function Label(props: PropsWithChildren<labelInterface>) {
@@ -77,7 +77,7 @@ export function Label(props: PropsWithChildren<labelInterface>) {
 
 export function Input(props: InputInterface) {
     return <input
-        className={`min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-secondary-color shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 bg-slate-500 m-2 ${props.className}`}
+        className={`min-w-0 flex-auto rounded-md border-0 bg-input-bg-color px-3.5 py-2 text-secondary-color shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 m-2 ${props.className}`}
         id={props.id}
         type={props.type}
         name={props.name}
@@ -88,7 +88,7 @@ export function Input(props: InputInterface) {
 
 export function Textarea() {
     return <textarea
-        className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 bg-slate-500 m-2"
+        className="min-w-0 flex-auto rounded-md border-0 bg-input-bg-color px-3.5 py-2 text-secondary-color shadow-sm ring-1 ring-inset ring-primary-color focus:ring-2 focus:ring-inset focus:ring-accent-color sm:text-sm sm:leading-6 m-2"
         id="frm-message"
         rows={6}
         name="message">

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    /* @apply dark:bg-secondary-color bg-gray-900 */
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -9,7 +15,40 @@
 
   --primary-color: rgb(214, 219, 220);
   --secondary-color: #000;
-  --accent-color: #6366f1
+  --accent-color: #6366f1;
+  --input-bg-color: rgb(255 255 255 / 0.05); /* bg-white-0.5 */
+  
+
+  --first-text-color: rgb(31 41 55); /* text-gray-800 */
+  --second-text-color: rgb(17 24 39); /* text-gray-900 */
+  --second-text-color-shadow: rgb(17 24 39 / 0.05); /* ring-gray-900/5 */
+  --paragraph-text-color: rgb(100 116 139); /* bg-slate-500 */
+  
+  --contrast-color: #fff;
+
+  --text-selected: #fff;
+  --text-selected-inverted: #000;
+}
+
+:root.dark {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 17 24 39;
+  --background-end-rgb: 51, 44, 48;
+
+  --primary-color: rgb(214, 219, 220);
+  --secondary-color: #000;
+  --accent-color: #6366f1;
+  --input-bg-color: rgb(255 255 255 / 0.05);
+
+  --first-text-color: #fff;
+  --second-text-color: #fff;
+  --second-text-color-shadow: rgb(17 24 39 / 0.05); /* ring-gray-900/5 */
+  --paragraph-text-color: #fff; /* bg-slate-500 */
+
+  --contrast-color: #fff;
+
+  --text-selected: #fff;
+  --text-selected-inverted: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,10 +61,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
