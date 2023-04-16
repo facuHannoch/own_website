@@ -31,7 +31,7 @@ export default async function handler(req: any, res: any) {
         to: process.env.TO_EMAIL,
         subject: 'Message from contact form',
         text: message,
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        html: message,
     }
     sgMail
         .send(msg)
