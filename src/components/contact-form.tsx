@@ -2,7 +2,25 @@ import { Input, Label, Textarea, TitleH1 } from "./titles";
 import styles from '../styles/contact-form.module.css'
 
 export default function ContactForm() {
-    return <form>
+    async function handleSubmit(e: any) {
+        e.preventDefault()
+        const data = new FormData(e.currentTarget)
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'post',
+                body: new URLSearchParams(data as any),
+            })
+            if (!response.ok) {
+                throw new Error('Invalid response')
+            }
+            alert('Thanks for contacting us, we will get back to you soon!')
+        } catch (error) {
+            console.error(error)
+            alert('We can\'t submit the form at the moment, try again later')
+        }
+    }
+
+    return <form onSubmit={handleSubmit}>
         {/* <TitleH1 title="Get in touch" /> */}
         <div className={`${styles.email} ${styles.block}`}>
             <Label htmlFor="frm-email" className="" >Email</Label>

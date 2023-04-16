@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "@superfaceai/one-sdk": "^2.4.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",

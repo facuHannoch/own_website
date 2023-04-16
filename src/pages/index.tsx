@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       <section id='portfolio' className="flex min-h-screen flex-col items-start p-4 sm:p-32">
-        <Title title={"You're in good company"} />
+        <Title title={"Past proyects"} />
         <TitleH2 title={"I've built numerous applications, both mobile and web, during my years as a full-stack developer"} />
         <Experiences experiences={experiences} tools={tools} />
       </section>
