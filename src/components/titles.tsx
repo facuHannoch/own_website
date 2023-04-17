@@ -29,7 +29,7 @@ interface InputInterface {
     type: string
     name: string
     autoComplete: string
-    required: boolean
+    required?: boolean
     className?: string
 }
 
@@ -82,7 +82,7 @@ export function Input(props: InputInterface) {
         type={props.type}
         name={props.name}
         autoComplete={props.autoComplete}
-        required={props.required}
+        required={props.required ?? false}
     />
 }
 

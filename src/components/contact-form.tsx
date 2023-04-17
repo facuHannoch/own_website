@@ -1,11 +1,16 @@
 import { Input, Label, Textarea, TitleH1 } from "./titles";
 import styles from '../styles/contact-form.module.css'
+import { toast, ToastContainer } from 'react-toastify'
+import { debuglog } from "util";
 
 export default function ContactForm() {
+    console.log("e")
+
     async function handleSubmit(e: any) {
         e.preventDefault()
         const data = new FormData(e.currentTarget)
         try {
+            debuglog("awdw")
             const response = await fetch('/api/contact', {
                 method: 'post',
                 body: new URLSearchParams(data as any),
@@ -13,17 +18,20 @@ export default function ContactForm() {
             if (!response.ok) {
                 throw new Error('Invalid response')
             }
-            alert('Thanks for contacting us, we will get back to you soon!')
+            if (response.status == 200) {
+                toast('Thanks for contacting, I\'ll get back to you soon', { hideProgressBar: true, autoClose: 2000, type: 'success', position: 'bottom-right' })
+                console.log(response.status)
+            }
         } catch (error) {
             console.error(error)
-            alert('We can\'t submit the form at the moment, try again later')
+            toast('There has been an error', { hideProgressBar: true, autoClose: 2000, type: 'error', position: 'bottom-right' })
         }
     }
 
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} className="flex flex-col content-center">
         {/* <TitleH1 title="Get in touch" /> */}
-        <div className={`${styles.email} ${styles.block}`}>
-            <Label htmlFor="frm-email" className="" >Email</Label>
+        <div className={`${styles.email} ${styles.block} ${styles.container}`}>
+            <Label htmlFor="frm-email" className="" >Email *</Label>
             <Input
                 id="frm-email"
                 type="email"
@@ -32,39 +40,36 @@ export default function ContactForm() {
                 required
             />
         </div>
-        <div className={`${styles.block} ${styles.phone}`}>
+        <div className={`${styles.block} ${styles.phone} ${styles.container}`}>
             <Label htmlFor="frm-phone">Phone</Label>
             <Input
                 id="frm-phone"
                 type="text"
                 name="phone"
                 autoComplete="tel"
-                required
             />
         </div>
-        <div className={`${styles.name} ${styles.block}`}>
-            <div>
+        <div className={`${styles.name} ${styles.block} name`}>
+            <div className={styles.container}>
                 <Label htmlFor="frm-first">First Name</Label>
                 <Input
                     id="frm-first"
                     type="text"
                     name="first"
                     autoComplete="given-name"
-                    required
                 />
             </div>
-            <div>
+            <div className={styles.container}>
                 <Label htmlFor="frm-last">Last Name</Label>
                 <Input
                     id="frm-last"
                     type="text"
                     name="last"
                     autoComplete="family-name"
-                    required
                 />
             </div>
         </div>
-        <div className={`${styles.message} ${styles.block}`}>
+        <div className={`${styles.message} ${styles.block} ${styles.container}`}>
             <Label htmlFor="frm-message">Message</Label>
             <Textarea />
             {/* <Textarea id="frm-message" rows={6} name="message"></Textarea> */}

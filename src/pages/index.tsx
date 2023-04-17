@@ -85,8 +85,8 @@ export default function Home() {
         <Testimonial testimonials={testimonials} />
       </section>
 
-      <section id="get-in-touch" className='flex min-h-screen flex-col items-start sm:p-32 sm:pt-2 p-4'>
-        <Title title="Let's get in touch" extraStyles='mb-4'/>
+      <section id="get-in-touch" className='flex min-h-screen flex-col items-center sm:items-start sm:p-32 sm:pt-2 p-4'>
+        <Title title="Let's get in touch" extraStyles='mb-4' />
         <ContactForm />
       </section>
       <Footer />
