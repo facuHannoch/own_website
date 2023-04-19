@@ -26,7 +26,7 @@ export default async function handler(req: any, res: any) {
         return false;
     }
 
-    const profile = await sdk.getProfile('communication/send-email@2.1.0');
+    // const profile = await sdk.getProfile('communication/send-email@2.1.0');
     const message = `
     Email: ${body.email},\n
     Phone: ${body.phone},\n
@@ -42,22 +42,21 @@ export default async function handler(req: any, res: any) {
     }
     console.log(message)
     console.log("-----")
-
-    sgMail
+    return sgMail
         .send(msg)
         .then(() => {
             console.log('Email sent')
-            res.status(200).end()
+            return res.status(200).end()
         })
         .catch((error: any) => {
             console.error(error)
             // saveInfoOnError(msg)
-            res.status(500).end()
+            return res.status(500).end()
         })
 
 }
 
-export async function superfaceAiHandler(req: any, res: any) {
+async function superfaceAiHandler(req: any, res: any) {
     const body = req.body;
 
     if (!formValid(body)) {
