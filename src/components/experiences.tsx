@@ -1,4 +1,4 @@
-import { ExperiencesTitle, P } from "./titles"
+import { CustomLink, ExperiencesTitle, P } from "./titles"
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -20,17 +20,28 @@ function Experiences({ experiences, tools, isMobile }: any) {
     }
 
     const ExperienceImgs = (index: number, e: any) => <div style={{ position: 'relative' }} className='flex flex-col h-32 sm:h-auto sm:w-2/5 dark:bg-slate-700/50 dark:ring-slate-800/5 ring-white ring-4 m-3 my-3 sm:my-1 shadow-md hover:shadow-lg '>
-        <Image fill={true} style={{ objectFit: 'contain' }} src={e.images[pos[index]]} alt={e.title} className="" />
-        <button style={{ zIndex: 2 }} className='mt-auto hover:bg-white transition ease-in-out hover:scale-100 hover:translate-y-0.5' onClick={(event) => changePos(index, e)}>
-            <Image className='mx-auto ' src={"/icons/arrow-right.svg"} alt={"Next testimonial"} width={25} height={40} />
-        </button>
+        {e.altText && e.images.length == 0 &&
+            <div className="my-auto p-4 text-center">
+                <P text={e.altText} extraStyles="text-sm sm:text-base" />
+            </div>
+        }
+        {e.images.length > 0 &&
+            <Image fill={true} style={{ objectFit: 'contain' }} src={e.images[pos[index]]} alt={e.title} className="" />
+        }
+        {e.images.length > 0 &&
+            <button style={{ zIndex: 2 }} className='mt-auto hover:bg-white transition ease-in-out hover:scale-100 hover:translate-y-0.5' onClick={(event) => changePos(index, e)}>
+                <Image className='mx-auto ' src={"/icons/arrow-right.svg"} alt={"Next testimonial"} width={25} height={40} />
+            </button>
+        }
     </div>
+
+    const renderExpImg = (e:any):boolean => (e.altText || (e.images && e.images.length > 0))
 
 
     return <div>{
         experiences.map((e: any, index: number) =>
             <div key={index} className="flex sm:m-8 my-8 sm:rounded-lg flex-col sm:flex-row">
-                {e.images && e.images.length > 0 && (index % 2 != 0 || isMobile) && ExperienceImgs(index, e)}
+                {renderExpImg(e) && (index % 2 != 0 || isMobile) && ExperienceImgs(index, e)}
                 <div className='p-4 sm:px-10 dark:bg-slate-700/50 dark:ring-slate-800/5 ring-1 ring-primary-color bg-white flex w-full shadow-md hover:shadow-lg'>
                     {/* sm:max-w-lg */}
                     <div className='mr-5 w-full'>
@@ -45,6 +56,7 @@ function Experiences({ experiences, tools, isMobile }: any) {
                                 </button> */}
                             </div>
                         }
+                        {/* <CustomLink href={""}>See more</CustomLink> */}
                     </div>
                     <div className='flex flex-col'>
                         {e.toolsUsed.map((imageSrc: string, index: number) => {
@@ -53,7 +65,7 @@ function Experiences({ experiences, tools, isMobile }: any) {
                         })}
                     </div>
                 </div>
-                {!isMobile && e.images && e.images.length > 0 && !(index % 2) && ExperienceImgs(index, e)}
+                {!isMobile && renderExpImg(e) && !(index % 2) && ExperienceImgs(index, e)}
             </div>
         )
     }</div>

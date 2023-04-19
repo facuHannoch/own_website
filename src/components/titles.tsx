@@ -50,7 +50,7 @@ export function TitleH1(props: TitleInterface) {
 }
 
 export function TitleH2(props: TitleInterface) {
-    var p = 'text-2xl sm:text-2xl tracking-tight my-2 ' + props.extraStyles
+    var p = 'text-2xl sm:text-2xl tracking-tight my-2 dark:text-paragraph-text-color ' + props.extraStyles
     return <p className={p}>{props.title}</p>
 }
 
@@ -72,7 +72,7 @@ export function CustomLink(props: PropsWithChildren<AInterface>) {
 }
 
 export function Label(props: PropsWithChildren<labelInterface>) {
-    return <label htmlFor={props.htmlFor} className={` ${props.className}`}>{props.children}</label>
+    return <label htmlFor={props.htmlFor} className={`text-paragraph-text-color ${props.className}`}>{props.children}</label>
 }
 
 export function Input(props: InputInterface) {

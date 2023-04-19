@@ -109,7 +109,7 @@ function TransitionButton(props: TransitionButtonInterface) {
     >
       {props.text}
     </CustomLink>
-    <CustomLink href="#portfolio" className="text-sm font-semibold leading-6 text-gray-900 2xl:text-2xl">
+    <CustomLink href="#portfolio" className="text-sm font-semibold leading-6 text-gray-900 dark:text-accent-color 2xl:text-2xl">
       See my portfolio <span aria-hidden="true">→</span>
     </CustomLink>
   </div>

@@ -80,7 +80,7 @@ export default function ContactForm() {
             {/* <Textarea id="frm-message" rows={6} name="message"></Textarea> */}
         </div>
         <div className={`${styles.button}`}>
-            <button disabled={loading} className="ring-1 ring-accent-color p-4 m-2 center mx-auto rounded-md transition ease-linear hover:scale-110 hover:text-white hover:bg-accent-color" type="submit">
+            <button disabled={loading} className="ring-1 ring-accent-color dark: text-accent-color p-4 m-2 center mx-auto rounded-md transition ease-linear hover:scale-110 hover:text-white hover:bg-accent-color" type="submit">
                 {!loading ? "Submit" :
                     <div className={styles.loadingSpinner}></div>}
             </button>
