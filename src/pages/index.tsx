@@ -64,7 +64,7 @@ export default function Home() {
           {/* <TitleH1 title={"Elevate your digital presence with our expert web and mobile development services"} /> */}
         </div>
 
-        <Newsletter />
+        {/* <Newsletter /> */}
 
       </section>
 
