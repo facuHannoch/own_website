@@ -49,8 +49,8 @@
 
   --contrast-color: #fff;
 
-  --text-selected: #fff;
-  --text-selected-inverted: #000;
+  --text-selected: #000;
+  --text-selected-inverted: #fff;
 }
 
 @media (prefers-color-scheme: dark) {

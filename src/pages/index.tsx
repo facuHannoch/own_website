@@ -41,8 +41,9 @@ const Button = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
 
-  return <button
-    onClick={() => theme == "dark" ? setTheme('light') : setTheme('dark')}>Toggle</button>
+  return <button className='text-lg transition-colors duration-500 hover:ease-linear hover:text-text-selected text-text-selected-inverted'
+    onClick={() => theme == "dark" ? setTheme('light') : setTheme('dark')}>Toggle theme
+  </button>
 }
 
 const { tools, experiences, testimonials } = JSON.parse(JSON.stringify(data));
@@ -86,8 +87,11 @@ export default function Home() {
       </section>
 
       <section id="get-in-touch" className='flex min-h-screen flex-col items-center sm:items-start sm:p-32 sm:pt-2 p-4'>
-        <Title title="Let's get in touch" extraStyles='mb-4' />
-        <ContactForm />
+        <Title title="Let's get in touch" extraStyles='md:pb-12 mb-4' />
+        <div className='flex content-between self-center'>
+          <ContactForm />
+          <CallToAction />
+        </div>
       </section>
       <Footer />
     </main >

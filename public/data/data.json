@@ -104,6 +104,11 @@
             "image": "icons/sqlite.svg",
             "name": "SQLite",
             "lowLevel": true
+        },
+        {
+            "image": "icons/aws-beanstalk.svg",
+            "name": "AWS Beanstalk",
+            "lowLevel": true
         }
     ],
     "experiences": [
@@ -129,11 +134,12 @@
         {
             "images": [],
             "title": "Blog from Scratch with PHP",
-            "description": "I had the opportunity to work with a client who was in need of a custom-built blog using PHP. The client had a specific vision in mind for the blog and wanted it to be built from the ground up. I was responsible for developing the entire backend of the blog, including managing the database and logic using a MySQL database solution.\n To ensure that the blog was reliable and scalable, I deployed it in an AWS Beanstalk environment. This allowed for easy deployment and management of the application. \n During the development process, I collaborated closely with the client to understand their requirements and make sure that the blog was meeting their expectations. I also implemented various features to enhance the user experience, such as a user authentication system and a commenting system. \n Overall, this project was a great opportunity to showcase my skills in PHP development and database management. It was a challenging but rewarding project that resulted in a functional and attractive blog that met the client's needs.",
+            "description": "I had the opportunity to work with a client who was in need of a custom-built blog using PHP. The client had a specific vision in mind for the blog and wanted it to be built from the ground up. I was responsible for developing the entire backend of the blog, including managing the database and logic using a MySQL database solution.\n To ensure that the blog was reliable and scalable, I deployed it in an AWS Beanstalk environment. This allowed for easy deployment and management of the application. \n During the development process, I collaborated closely with the client to understand their requirements and make sure that the blog was meeting their expectations. I also implemented various features to enhance the user experience, such as a user authentication system and a commenting system. \n Overall, this project was a great opportunity to refine my skills in PHP development and database management. It was a challenging but rewarding project that resulted in a functional and attractive blog that met the client's needs.",
             "toolsUsed": [
                 "PHP",
                 "MySQL",
-                "AWS"
+                "AWS",
+                "AWS Beanstalk"
             ]
         },
         {
