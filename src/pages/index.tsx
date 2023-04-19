@@ -16,7 +16,11 @@ import ContactForm from '@/components/contact-form'
 
 import { useTheme } from 'next-themes'
 
+import ReactGA from 'react-ga4'
+
 const inter = Inter({ subsets: ['latin'] })
+
+ReactGA.initialize("G-CMVSL68BHH");
 
 export type Content = {
   tool: {
