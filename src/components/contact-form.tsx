@@ -2,11 +2,14 @@ import { Input, Label, Textarea, TitleH1 } from "./titles";
 import styles from '../styles/contact-form.module.css'
 import { toast, ToastContainer } from 'react-toastify'
 import { debuglog } from "util";
+import { useState } from 'react'
 
 export default function ContactForm() {
+    const [loading, setLoading] = useState(false)
     console.log("e")
 
     async function handleSubmit(e: any) {
+        setLoading(true)
         e.preventDefault()
         const data = new FormData(e.currentTarget)
         try {
@@ -21,10 +24,12 @@ export default function ContactForm() {
             if (response.status == 200) {
                 toast('Thanks for contacting, I\'ll get back to you soon', { hideProgressBar: true, autoClose: 2000, type: 'success', position: 'bottom-right' })
                 console.log(response.status)
+                setLoading(false)
             }
         } catch (error) {
             console.error(error)
             toast('There has been an error', { hideProgressBar: true, autoClose: 2000, type: 'error', position: 'bottom-right' })
+            setLoading(false)
         }
     }
 
@@ -75,7 +80,12 @@ export default function ContactForm() {
             {/* <Textarea id="frm-message" rows={6} name="message"></Textarea> */}
         </div>
         <div className={`${styles.button}`}>
-            <button className="ring-1 ring-accent-color p-4 m-2 center mx-auto rounded-md transition ease-linear hover:scale-110 hover:text-white hover:bg-accent-color" type="submit">Submit</button>
+            <button disabled={loading} className="ring-1 ring-accent-color p-4 m-2 center mx-auto rounded-md transition ease-linear hover:scale-110 hover:text-white hover:bg-accent-color" type="submit">
+                {!loading ? "Submit" :
+                    <div className={styles.loadingSpinner}></div>}
+            </button>
+            <div className="spinner-container">
+            </div>
         </div>
     </form >
 }
