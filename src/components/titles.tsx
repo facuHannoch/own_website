@@ -37,7 +37,7 @@ export function P(props: PInterface) {
     return <p className={'text-paragraph-text-color ' + props.extraStyles}>{props.text}</p>
 }
 export function P2(props: PInterface) {
-    return <p className={'text-slate-800 text-2xl ' + props.extraStyles}>{props.text}</p>
+    return <p className={'text-slate-800 dark:text-slate-200 text-2xl ' + props.extraStyles}>{props.text}</p>
 }
 
 
