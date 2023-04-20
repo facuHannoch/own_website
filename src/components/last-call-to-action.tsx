@@ -25,13 +25,13 @@ export default function CallToAction({ locale, content }: { locale: string, cont
                             {/* <br />
                             Let's talk */}
                         </h2>
-                        {locale == "en-ES" ?
+                        {locale == "en" ?
                             <p className="mt-6 leading-8 text-gray-300 text-2xl">
-                                Get a <span className="text-white\">free</span> quote for your project by filling out this form
+                                Get a <span className="text-white">free</span> quote for your project by filling out this form
                             </p>
                             :
                             <p className="mt-6 leading-8 text-gray-300 text-2xl">
-                                Obtén una estimación <span className="text-white\">gratis</span> para tu proyecto al llenar este formulario
+                                Obtén una estimación <span className="text-white">gratis</span> para tu proyecto al llenar este formulario
                             </p>
                         }
                         {/* <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
