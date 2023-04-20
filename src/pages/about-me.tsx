@@ -4,7 +4,7 @@ import Header from "@/components/header";
 import { useRouter } from "next/router";
 
 const AboutMePageContent = {
-    "en-EN": {
+    "en": {
         homePage: "Home Page",
         contactInfoTitle: "About Me",
         aboutMeDescription: "Hello, I am Facundo Hannoch, web and mobile developer. The languages I have most experience with are Dart, JavaScript and PHP, but have also used Java, Python and C++, and if it's needed I have no problem in developing the skill necessary to accomplish a job. When I'm not studying or coding, you can find me reading about the latest tech trends and exploring new programming techniques. I developed this website as a way to showcase my skills, share my knowledge with others, and connect with like-minded individuals in the tech community.",
@@ -12,7 +12,7 @@ const AboutMePageContent = {
     },
     "es": {
         homePage: "Inicio",
-        contactInfoTitle: "About Me",
+        contactInfoTitle: "Sobre Mí",
         aboutMeDescription: "Hola, soy Facundo Hannoch, desarrollador web y móvil. Los lenguajes en los que tengo más experiencia son Dart, JavaScript y PHP, pero también he utilizado Java, Python y C++. Si es necesario, no tengo problema en desarrollar las habilidades necesarias para llevar a cabo un trabajo. Cuando no estoy estudiando o programando, puedes encontrarme leyendo sobre las últimas tendencias tecnológicas y explorando nuevas técnicas de programación. Desarrollé este sitio web como una forma de mostrar mis habilidades, compartir mi conocimiento con otros y conectarme con personas afines en la comunidad tecnológica.",
         contactInfo: "Información de contacto:"
     },
