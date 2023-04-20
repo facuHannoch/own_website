@@ -4,9 +4,8 @@ import { toast, ToastContainer } from 'react-toastify'
 import { debuglog } from "util";
 import { useState } from 'react'
 
-export default function ContactForm() {
+export default function ContactForm({ content }: { content: any }) {
     const [loading, setLoading] = useState(false)
-    console.log("e")
 
     async function handleSubmit(e: any) {
         setLoading(true)
@@ -22,13 +21,12 @@ export default function ContactForm() {
                 throw new Error('Invalid response')
             }
             if (response.status == 200) {
-                toast('Thanks for contacting, I\'ll get back to you soon', { hideProgressBar: true, autoClose: 2000, type: 'success', position: 'bottom-right' })
-                console.log(response.status)
+                toast(content.successContactForm, { hideProgressBar: true, autoClose: 2000, type: 'success', position: 'bottom-right' })
                 setLoading(false)
             }
         } catch (error) {
             console.error(error)
-            toast('There has been an error', { hideProgressBar: true, autoClose: 2000, type: 'error', position: 'bottom-right' })
+            toast(content.errorContactForm, { hideProgressBar: true, autoClose: 2000, type: 'error', position: 'bottom-right' })
             setLoading(false)
         }
     }
@@ -36,7 +34,7 @@ export default function ContactForm() {
     return <form onSubmit={handleSubmit} className="flex flex-col content-center">
         {/* <TitleH1 title="Get in touch" /> */}
         <div className={`${styles.email} ${styles.block} ${styles.container}`}>
-            <Label htmlFor="frm-email" className="" >Email *</Label>
+            <Label htmlFor="frm-email" className="" >{content.email} *</Label>
             <Input
                 id="frm-email"
                 type="email"
@@ -46,7 +44,7 @@ export default function ContactForm() {
             />
         </div>
         <div className={`${styles.block} ${styles.phone} ${styles.container}`}>
-            <Label htmlFor="frm-phone">Phone</Label>
+            <Label htmlFor="frm-phone">{content.phone}</Label>
             <Input
                 id="frm-phone"
                 type="text"
@@ -56,7 +54,7 @@ export default function ContactForm() {
         </div>
         <div className={`${styles.name} ${styles.block} name`}>
             <div className={styles.container}>
-                <Label htmlFor="frm-first">First Name</Label>
+                <Label htmlFor="frm-first">{content.firstName}</Label>
                 <Input
                     id="frm-first"
                     type="text"
@@ -65,7 +63,7 @@ export default function ContactForm() {
                 />
             </div>
             <div className={styles.container}>
-                <Label htmlFor="frm-last">Last Name</Label>
+                <Label htmlFor="frm-last">{content.lastName}</Label>
                 <Input
                     id="frm-last"
                     type="text"
@@ -75,13 +73,13 @@ export default function ContactForm() {
             </div>
         </div>
         <div className={`${styles.message} ${styles.block} ${styles.container}`}>
-            <Label htmlFor="frm-message">Message</Label>
+            <Label htmlFor="frm-message">{content.msg}</Label>
             <Textarea />
             {/* <Textarea id="frm-message" rows={6} name="message"></Textarea> */}
         </div>
         <div className={`${styles.button}`}>
             <button disabled={loading} className="ring-1 ring-accent-color dark: text-accent-color p-4 m-2 center mx-auto rounded-md transition ease-linear hover:scale-110 hover:text-white hover:bg-accent-color" type="submit">
-                {!loading ? "Submit" :
+                {!loading ? content.submit :
                     <div className={styles.loadingSpinner}></div>}
             </button>
             <div className="spinner-container">

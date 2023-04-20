@@ -1,7 +1,7 @@
 import ContactForm from "./contact-form";
 import Image from 'next/image'
 
-export default function CallToAction() {
+export default function CallToAction({ locale, content }: { locale: string, content: { callToActionTitle: string } }) {
     return (
         <div className="hidden sm:block">
             <div className="mx-auto max-w-7xl py-4 sm:px-6 lg:px-40">
@@ -21,13 +21,19 @@ export default function CallToAction() {
                     </svg>
                     <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl">
-                            Want to discuss your project?
+                            {content.callToActionTitle}
                             {/* <br />
                             Let's talk */}
                         </h2>
-                        <p className="mt-6 leading-8 text-gray-300 text-2xl">
-                            Get a <span className="text-white">free</span> quote for your project by filling out this form
-                        </p>
+                        {locale == "en-ES" ?
+                            <p className="mt-6 leading-8 text-gray-300 text-2xl">
+                                Get a <span className="text-white\">free</span> quote for your project by filling out this form
+                            </p>
+                            :
+                            <p className="mt-6 leading-8 text-gray-300 text-2xl">
+                                Obtén una estimación <span className="text-white\">gratis</span> para tu proyecto al llenar este formulario
+                            </p>
+                        }
                         {/* <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                             <a
                                 href="#"
@@ -51,6 +57,6 @@ export default function CallToAction() {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

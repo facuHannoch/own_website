@@ -27,15 +27,11 @@ export default function Testimonial({ testimonials }: any) {
         </div>
 
     </div>
-    
+
 }
 
 export async function getStaticProps({ params }: any) {
-
     const [, , data] = JSON.parse(JSON.stringify(jsonData));
-    console.log("Hello")
-
-    console.log(data)
 
     return {
         props: {

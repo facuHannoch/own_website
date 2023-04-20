@@ -3,12 +3,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 
-function Experiences({ experiences, tools, isMobile }: any) {
+function Experiences({ experiences, tools, isMobile, locale }: any) {
     const posArr: Array<number> = Array.from({ length: 10 }, () => 0)
 
     var [pos, setPos] = useState(posArr)
-
-    console.log(experiences[2].images)
 
     function changePos(index: number, e: any) {
         var n = e.images.length == (pos[index] + 1) ? 0 : pos[index] + 1
@@ -22,7 +20,7 @@ function Experiences({ experiences, tools, isMobile }: any) {
     const ExperienceImgs = (index: number, e: any) => <div style={{ position: 'relative' }} className='flex flex-col h-32 sm:h-auto sm:w-2/5 dark:bg-slate-700/50 dark:ring-slate-800/5 ring-white ring-4 m-3 my-3 sm:my-1 shadow-md hover:shadow-lg '>
         {e.altText && e.images.length == 0 &&
             <div className="my-auto p-4 text-center">
-                <P text={e.altText} extraStyles="text-sm sm:text-base" />
+                <P text={locale == "es" ? e.altTextES : e.altText} extraStyles="text-sm sm:text-base" />
             </div>
         }
         {e.images.length > 0 &&
@@ -45,8 +43,8 @@ function Experiences({ experiences, tools, isMobile }: any) {
                 <div className='p-4 sm:px-10 dark:bg-slate-700/50 dark:ring-slate-800/5 ring-1 ring-primary-color bg-white flex w-full shadow-md hover:shadow-lg'>
                     {/* sm:max-w-lg */}
                     <div className='mr-5 w-full'>
-                        <ExperiencesTitle title={e.title} />
-                        <P text={e.description} />
+                        <ExperiencesTitle title={locale == "es" && e.titleES ? e.titleES : e.title} />
+                        <P text={locale == "es" ? e.descriptionES : e.description} />
                         {e.images && e.images.length > 0 &&
                             <div className='flex pt-8'>
                                 {/* <Image src={e.images[pos[index]]} alt={e.title} width={400} height={40} className='w-4/5 2xl:w-auto bg-black' />

@@ -3,32 +3,38 @@
         {
             "image": "icons/wordpress-fill.svg",
             "name": "Wordpress",
-            "description": "Using WordPress, I can create a website that is easy to use and update, even for those with no technical expertise. Whether you're a blogger, business owner, or creative professional, Wordpress is a good platform to showcase your work and reach your target audience."
+            "description": "Using WordPress, I can create a website that is easy to use and update, even for those with no technical expertise. Whether you're a blogger, business owner, or creative professional, Wordpress is a good platform to showcase your work and reach your target audience.",
+            "descriptionES": "Usando WordPress, puedo crear un sitio web que sea fácil de usar y actualizar, incluso para aquellos sin experiencia técnica. Ya seas un blogger, dueño de un negocio o un profesional creativo, WordPress es una buena plataforma para mostrar tu trabajo y llegar a tu audiencia objetivo."
         },
         {
             "image": "icons/flutter.svg",
             "name": "Flutter",
-            "description": "Flutter is a well known framework used to build mobile applications, for both android and IOs. With Flutter, I can build custom, high-performance apps that are tailored to meet the unique needs of my clients, while also delivering an engaging user experience."
+            "description": "Flutter is a well known framework used to build mobile applications, for both android and IOs. With Flutter, I can build custom, high-performance apps that are tailored to meet the unique needs of my clients, while also delivering an engaging user experience.",
+            "descriptionES": "Flutter es framework conocido utilizado para construir aplicaciones móviles, tanto para Android como para iOS. Con Flutter, puedo crear aplicaciones personalizadas y de alto rendimiento que se adaptan a las necesidades únicas de mis clientes, al mismo tiempo que ofrecen una experiencia de usuario atractiva."
         },
         {
             "image": "icons/react.svg",
             "name": "React",
-            "description": "React is the most used Javascript librery for creating responsive, and fully interactive websites, providing a versatile set of tools to create robust and performant web applications."
+            "description": "React is the most used Javascript librery for creating responsive, and fully interactive websites, providing a versatile set of tools to create robust and performant web applications.",
+            "descriptionES": "React es la biblioteca de JavaScript más utilizada para crear sitios web responsivos y completamente interactivos, proporcionando un conjunto versátil de herramientas para crear aplicaciones web robustas y con alto rendimiento."
         },
         {
             "image": "icons/firebase.svg",
             "name": "Firebase",
-            "description": "Firebase is a suite of tools that helps businesses create engaging web and mobile apps quickly and easily, with features like real-time data syncing, analytics, and cloud messaging that enable better customer engagement and retention."
+            "description": "Firebase is a suite of tools that helps businesses create engaging web and mobile apps quickly and easily, with features like real-time data syncing, analytics, and cloud messaging that enable better customer engagement and retention.",
+            "descriptionES": "Firebase es una suite de herramientas que ayuda a las empresas a crear aplicaciones web y móviles atractivas de manera rápida y sencilla, con funciones como la sincronización de datos en tiempo real, análisis y mensajería en la nube que permiten una mejor participación y retención de los clientes."
         },
         {
             "image": "icons/mysql.svg",
             "name": "MySQL",
-            "description": "MySQL is a reliable and scalable database management system that enables businesses to store and analyze large amounts of data."
+            "description": "MySQL is a reliable and scalable database management system that enables businesses to store and analyze large amounts of data.",
+            "descriptionES": "MySQL es un sistema de gestión de bases de datos fiable y escalable que permite a las empresas almacenar y analizar grandes cantidades de datos."
         },
         {
             "image": "icons/aws.svg",
             "name": "AWS",
-            "description": "Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster."
+            "description": "Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.",
+            "descriptionES": "Amazon Web Services (AWS) es la nube más completa y ampliamente adoptada del mundo, que ofrece más de 200 servicios con todas las características de los centros de datos a nivel mundial. Millones de clientes, incluidas las empresas emergentes de más rápido crecimiento, las empresas más grandes y las principales agencias gubernamentales, están utilizando AWS para reducir costos, ser más ágiles e innovar más rápido."
         },
         {
             "image": "icons/mongodb.svg",
@@ -115,17 +121,25 @@
         {
             "images": [],
             "title": "Mobile App Development \"VThePeople\" in Flutter",
-            "description": "Complex application who served as a tool for poeple in India to create communities, being able to inscribe their children in school, ask for transport, rent, medical services, delivery, etc. Worked as a mobile developer for building and mantaining a complex application. Involved in the design of the application, and some of the technical questions.",
+            "titleES": "Desarrollo de aplicación Flutter \"VThePeople\"",
+            "description": "Complex application who served as a tool for people in India to create communities, being able to inscribe their children in school, ask for transport, rent, medical services, delivery, etc. Worked as a mobile developer for building and mantaining a complex application. Involved in the design of the application, and some of the technical questions.",
+            "descriptionES": "Aplicación compleja que sirvió como una herramienta para las personas en India para crear comunidades, inscribir a sus hijos en la escuela, solicitar transporte, alquiler, servicios médicos, entrega, etc. Trabajé como desarrollador móvil para construir y mantener una aplicación compleja. Participé en el diseño de la aplicación y en algunas de las preguntas técnicas.",
             "altText": "Due to the app not being released globally yet, I can't share images of this project. However, if you have a simmilar project or have doubts about my role here, feel free to ask.",
+            "altTextES": "Debido a que la applicación no se ha lanzado aún de forma total, no puedo compartir imágenes. Si tienes alguna duda sobre mi rol en este proyecto, no dudes en preguntarme al respecto.",
             "toolsUsed": [
                 "Flutter",
                 "Firebase"
             ]
         },
         {
-            "images": ["/project-images/timesheet/en1.png", "/project-images/timesheet/en2.png"],
+            "images": [
+                "/project-images/timesheet/en1.png",
+                "/project-images/timesheet/en2.png"
+            ],
             "title": "Timesheet Application",
+            "titleES": "Aplicación de rastreo de horas",
             "description": "A mobile application to help workers register the hours they worked and keep a register of the total hours, and calculate the total money on each period based on what they charge per hour. It also lets you export all the data to an Excel file, be it all the data or for a determinated period. The application was made individually by me and the information is stored and managed with a SQLite database. The app was published on certain app markets like Galaxy Store.",
+            "descriptionES": "Una aplicación móvil para ayudar a los trabajadores a registrar las horas que trabajaron y mantener un registro de las horas totales, y calcular el dinero total en cada período en función de lo que cobran por hora. También le permite exportar todos los datos a un archivo de Excel, ya sea todos los datos o para un período determinado. La aplicación fue creada individualmente por mí y la información se almacena y administra con una base de datos SQLite. La aplicación se publicó en ciertos mercados de aplicaciones como Galaxy Store.",
             "toolsUsed": [
                 "Flutter",
                 "SQLite"
@@ -134,7 +148,9 @@
         {
             "images": [],
             "title": "Blog from Scratch with PHP",
+            "titleES": "Blog desde cero con PHP",
             "description": "I had the opportunity to work with a client who was in need of a custom-built blog using PHP. The client had a specific vision in mind for the blog and wanted it to be built from the ground up. I was responsible for developing the entire backend of the blog, including managing the database and logic using a MySQL database solution.\n To ensure that the blog was reliable and scalable, I deployed it in an AWS Beanstalk environment. This allowed for easy deployment and management of the application. \n During the development process, I collaborated closely with the client to understand their requirements and make sure that the blog was meeting their expectations. I also implemented various features to enhance the user experience, such as a user authentication system and a commenting system. \n Overall, this project was a great opportunity to refine my skills in PHP development and database management. It was a challenging but rewarding project that resulted in a functional and attractive blog that met the client's needs.",
+            "descriptionES": "Tuve la oportunidad de trabajar con un cliente que necesitaba un blog personalizado construido con PHP. El cliente tenía una visión específica en mente para el blog y quería que se construyera desde cero. Fui responsable de desarrollar todo el backend del blog, incluida la gestión de la base de datos y la lógica utilizando una solución de base de datos MySQL. \n Para garantizar que el blog fuera confiable y escalable, lo implementé en un entorno de AWS Beanstalk. Esto permitió una implementación y gestión fáciles de la aplicación. \n Durante el proceso de desarrollo, colaboré estrechamente con el cliente para comprender sus requisitos y asegurarme de que el blog cumpliera con sus expectativas. También implementé varias características para mejorar la experiencia del usuario, como un sistema de autenticación de usuario y un sistema de comentarios. \n En general, este proyecto fue una gran oportunidad para refinar mis habilidades en desarrollo de PHP y gestión de bases de datos. Fue un proyecto desafiante pero gratificante que resultó en un blog funcional y atractivo que satisfizo las necesidades del cliente.",
             "toolsUsed": [
                 "PHP",
                 "MySQL",
@@ -143,18 +159,26 @@
             ]
         },
         {
-            "images": ["/project-images/vanilla-js-ecommerce/image-1.jpg"],
+            "images": [
+                "/project-images/vanilla-js-ecommerce/image-1.jpg"
+            ],
             "title": "Ecommerce website built with JavaScript (Demo)",
+            "titleES": "Sitio web de comercio electrónico construido con JavaScript (Demo)",
             "description": "As part of a demo project, I built an ecommerce website using HTML, CSS, and vanilla JavaScript. The website allows users to browse a variety of furniture products, add items to their cart, and complete the purchase process.\n While this project was a demo that I completed in a day, it allowed me to practice my skills in frontend development and UX design.",
+            "descriptionES": "Como parte de un proyecto de demostración, construí un sitio web de comercio electrónico utilizando HTML, CSS y JavaScript. El sitio web permite a los usuarios navegar por una variedad de productos de mobiliario, agregar artículos a su carrito y completar el proceso de compra. Si bien este proyecto fue una demostración que completé en un día, me permitió practicar mis habilidades en desarrollo frontend y diseño UX.",
             "toolsUsed": [
                 "React",
                 "JavaScript"
             ]
         },
         {
-            "images": ["/project-images/keeper-demo/image-1.jpg", "/project-images/keeper-demo/image-2.jpg"],
+            "images": [
+                "/project-images/keeper-demo/image-1.jpg",
+                "/project-images/keeper-demo/image-2.jpg"
+            ],
             "title": "Keep demo app",
             "description": "For this project, I built a web application with React and NodeJS that emulates the functionality of Google Keep. Users can create notes, edit them, and delete them as needed. The application features a simple user interface and is designed to be responsive and mobile-friendly.",
+            "descriptionES": "Para este proyecto, construí una aplicación web con React y NodeJS que emula la funcionalidad de Google Keep. Los usuarios pueden crear notas, editarlas y eliminarlas según sea necesario. La aplicación presenta una interfaz de usuario simple y está diseñada para ser receptiva y amigable para dispositivos móviles.",
             "toolsUsed": [
                 "React",
                 "JavaScript"
@@ -163,7 +187,9 @@
         {
             "images": [],
             "title": "This website!",
+            "titleES": "¡Este sitio web!",
             "description": "Although a simple project, it is created as well with the latest technologies, using NextJs and React to provide a fast user experience, and doing a Static Site Generation",
+            "descriptionES": "Aunque un proyecto simple, fue creado con las últimas tecnologías, usando NextJs y ReactJs para proporcionar una experiencia de usuario fluida.",
             "toolsUsed": [
                 "NextJs"
             ]
