@@ -115,6 +115,22 @@
             "image": "icons/aws-beanstalk.svg",
             "name": "AWS Beanstalk",
             "lowLevel": true
+        },
+        {
+            "image": "icons/python.svg",
+            "name": "Python"
+        },
+        {
+            "image": "icons/pandas.svg",
+            "name": "Pandas"
+        },
+        {
+            "image": "icons/octoparse.svg",
+            "name": "Octoparse"
+        },
+        {
+            "image": "icons/zohomail.svg",
+            "name": "ZohoMail"
         }
     ],
     "experiences": [
@@ -183,6 +199,18 @@
                 "React",
                 "JavaScript"
             ]
+        },
+        {
+            "images": [
+                "/project-images/data-scraping-octo-python-zoho/image-1.jpg",
+                "/project-images/data-scraping-octo-python-zoho/image-2.jpg",
+                "/project-images/data-scraping-octo-python-zoho/image-3.jpg"
+            ],
+            "title": "Big-scale data scraping, manipulation and utilization with Octoparse, Python and ZohoMail",
+            "titleES": "Análisis y manipulación de datos a gran escala con Octoparse, Python y ZohoMail",
+            "description": "I developed a Python-based project to identify potential restaurant owners who do not have a website and send them targeted emails. The project involved using web scraping and data analysis techniques to extract restaurant data from various sources, including TripAdvisor and Yelp. Using Pandas and regular expressions, I filtered the data to identify restaurants without websites and grouped them by location. I then used the ZohoMail API to send targeted emails to these potential leads. This project not only helped me improve my web scraping and data analysis skills but also provided an opportunity to practice my communication and marketing skills.",
+            "descriptionES": "Desarrollé un proyecto de automatización de marketing para restaurantes, utilizando Python, Octoparse y Zoho Mail. Usé Octoparse para extraer información de los restaurantes de TripAdvisor, como su nombre, correo electrónico y si tienen un sitio web. Luego con Python y Pandas la información es filtrada y organizada por ciudad y presencia de sitio web. Los datos son exportados a un archivo Excel para visualizar claramente la información. Entonces se toma la información más relevante y se crea un archivo json con la misma. En la etapa final, me conecto con la API de ZohoMail, y usando la información contenida en el archivo json soy capaz de mandar eails de forma automatizada. Parte de la información recolectada es utilizada para personalizar el email enviado, permitió enviar correos electrónicos a varios restaurantes al mismo tiempo, ahorrando tiempo y esfuerzo. También me permitió filtrar los restaurantes que ya tenían sitio web, para centrarme en aquellos que necesitaban ayuda para mejorar su presencia en línea. Este proyecto no sólo me ayudo a mejorar mis habilidades en web scarping y data analysis, pero también me permitió practicar mis habilidades de comunicación y marketing.",
+            "toolsUsed": ["Octoparse", "Python", "Pandas", "ZohoMail"]
         },
         {
             "images": [],
