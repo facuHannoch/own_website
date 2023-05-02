@@ -128,12 +128,14 @@ export default function Home() {
           <Title title={"Facundo Hannoch"} />
           <TitleH1 title={content.carrer} />
           {Button(content.toggle)}
-          <div className='py-4 sm:items-start items-center'>
-            <TitleH2 title={content.secondTitle} extraStyles='text-accent-color sm:text-3xl hover:text-black' />
-            <TitleH2 title={content.thirdTitle} extraStyles='text-black sm:text-3xl hover:font-bold' />
+          <div className='mt-2 ring-2 ring-primary-color p-8 rounded-lg shadow-lg dark:ring-secondary-color dark:bg-slate-800 dark:ring-0 dark:shadow-lg dark:shadow-slate-950'>
+            <div className='py-4 sm:items-start items-center'>
+              <TitleH2 title={content.secondTitle} extraStyles='text-accent-color sm:text-3xl hover:text-black' />
+              <TitleH2 title={content.thirdTitle} extraStyles='text-black sm:text-3xl hover:font-bold' />
+            </div>
+            <TransitionButton actionButton={content.actionButton} seePortfolio={content.seePortfolio} />
+            {/* <TitleH1 title={"Elevate your digital presence with our expert web and mobile development services"} /> */}
           </div>
-          <TransitionButton actionButton={content.actionButton} seePortfolio={content.seePortfolio} />
-          {/* <TitleH1 title={"Elevate your digital presence with our expert web and mobile development services"} /> */}
         </div>
 
         {/* <Newsletter /> */}
