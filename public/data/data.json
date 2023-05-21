@@ -176,7 +176,8 @@
         },
         {
             "images": [
-                "/project-images/vanilla-js-ecommerce/image-1.jpg"
+                "/project-images/vanilla-js-ecommerce/image-1.jpg",
+                "/project-images/vanilla-js-ecommerce/image-2.jpg"
             ],
             "title": "Ecommerce website built with JavaScript (Demo)",
             "titleES": "Sitio web de comercio electrónico construido con JavaScript (Demo)",
