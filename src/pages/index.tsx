@@ -20,6 +20,8 @@ import ReactGA from 'react-ga4'
 import http from 'http'
 import path from 'path'
 import { useRouter } from "next/router";
+import { useEffect } from 'react'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -115,10 +117,27 @@ const { tools, experiences, testimonials } = JSON.parse(JSON.stringify(data));
 // }
 
 export default function Home() {
-  const { locale, locales, defaultLocale, asPath } = useRouter();
+  const { locale, locales, defaultLocale, asPath, query } = useRouter();
   type locale = keyof typeof landingContent
   const loc: locale = (locale || defaultLocale || "en") as locale
   const content = landingContent[loc]
+
+  useEffect(() => {
+    const { nm, c } = query
+    if (nm)
+      fetch('/api/nm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nm, c }),
+      })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+  }, [query])
 
   return (
     <main >

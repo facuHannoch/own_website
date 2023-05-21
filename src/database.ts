@@ -16,3 +16,15 @@ export async function connectToDatabase() {
 
   return { client: cachedClient, dbName };
 }
+
+export async function addRecordToCollection(uniqueId: string, dbCollection: string, extraData?: {}) {
+  const { client, dbName } = await connectToDatabase();
+  const db = client.db(dbName);
+  const emailOpensCollection = db.collection(dbCollection);
+
+  await emailOpensCollection.insertOne({
+    uniqueId,
+    openedAt: new Date(),
+    ...extraData
+  });
+}

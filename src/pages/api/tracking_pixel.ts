@@ -1,16 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { connectToDatabase } from '../../database';
-
-async function recordEmailOpen(uniqueId: string) {
-  const { client, dbName } = await connectToDatabase();
-  const db = client.db(dbName);
-  const emailOpensCollection = db.collection('emails-opened');
-
-  await emailOpensCollection.insertOne({
-    uniqueId,
-    openedAt: new Date(),
-  });
-}
+import { connectToDatabase, addRecordToCollection } from '../../database';
 
 // A helper function to generate a 1x1 transparent GIF image
 function createTransparentGif(): Buffer {
@@ -22,10 +11,11 @@ function createTransparentGif(): Buffer {
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   // Extract the unique ID from the request query
   const uniqueId = req.query.id as string;
+  const campaign = req.query.c as string;
   console.log(req.query)
 
   // Record the email open event in a database (e.g., MongoDB, PostgreSQL, etc.)
-  await recordEmailOpen(uniqueId);
+  await addRecordToCollection(uniqueId, 'emails-opened', {'campaign': campaign});
 
   // Set the response headers and return the 1x1 transparent GIF image
   res.setHeader('Content-Type', 'image/gif');
