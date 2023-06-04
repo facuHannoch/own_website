@@ -205,7 +205,7 @@ export default function Home() {
           {/* <div style={{}} */}
           <div style={{ position: 'relative' }}
             className="feature bg-image">
-            <Image src={food1Img} alt='Foto de un plato con pollo y arroz.' quality={100} fill style={imageStyle} />
+            <Image src={food1Img} alt='Foto de un plato con pollo y arroz.' fill style={imageStyle} />
           </div>
           <div className="feature">
             <StarOutlineSvg {...svgStyle} />
@@ -215,7 +215,7 @@ export default function Home() {
           </div>
           <div style={{ position: 'relative' }}
             className="feature bg-image">
-            <Image src={restaurantShot} alt='Imagen de un restaurante y el mostrador del mismo.' quality={100} fill style={imageStyle} />
+            <Image src={restaurantShot} alt='Imagen de un restaurante y el mostrador del mismo.' fill style={imageStyle} />
           </div>
           <div className="feature">
             <GlobeSvg {...svgStyle} />
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
           <div style={{ position: 'relative' }}
             className="feature bg-image">
-            <Image src={food3Img} alt='Fptp de un sánguche con salsa, con buena presentación.' quality={100} fill style={imageStyle} />
+            <Image src={food3Img} alt='Fptp de un sánguche con salsa, con buena presentación.' fill style={imageStyle} />
           </div>
           <div className="feature">
             <PaintbrushSvg {...svgStyle} />
