@@ -312,7 +312,7 @@ export default function Home() {
                 <p>Hemos trabajado con múltiples clientes en multitud de proyectos, y cada uno nos ha permitido aprender y mejorar más nuestro trabajo</p>
               </header>
               {
-                !showButton &&
+                showButton &&
                 <>
                   <h3 style={{ textAlign: 'center' }}>¿Todavía no te convencimos? </h3>
                   <ul className="actions special">
