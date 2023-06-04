@@ -20,7 +20,14 @@ import ReactGA from 'react-ga4'
 import http from 'http'
 import path from 'path'
 import { useRouter } from "next/router";
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import food1Img from '@/images/food.jpg'
+import food2Img from '@/images/food-hamburguer.jpg'
+import food3Img from '@/images/food-rajesh.jpg'
+import restaurantShot from '@/images/restaurant-shot.jpg'
+import bannerBlur from '@/images/banner-blur.jpg'
+import bannerImg from '@/images/banner.png'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -116,13 +123,21 @@ const { tools, experiences, testimonials } = JSON.parse(JSON.stringify(data));
 //   locale: string
 // }
 
+const bgImageStyle = {
+  backgroundPosition: 'center', backgroundSize: 'cover'
+}
 export default function Home() {
   const { locale, locales, defaultLocale, asPath, query } = useRouter();
   type locale = keyof typeof landingContent
   const loc: locale = (locale || defaultLocale || "en") as locale
   const content = landingContent[loc]
 
+  const [showButton, setShowButton] = useState(false);
+
   useEffect(() => {
+    setTimeout(() => {
+      setShowButton(true)
+    }, 120000) // 120000 milliseconds = 2 minutes
     const { nm, c } = query
     if (nm)
       fetch('/api/nm', {
@@ -138,6 +153,226 @@ export default function Home() {
           console.error('Error:', error);
         });
   }, [query])
+  return (
+    <main>
+      <Header />
+      <div className="is-preload">
+
+
+        <header id="header" className="alt">
+          <a className="logo" href="index.html">WebCrafters <span>by Facundo</span></a>
+          {/* <nav>
+            <a href="#menu"><span className="label">Menu</span></a>
+          </nav> */}
+        </header>
+
+
+        <nav id="menu">
+          <ul className="links">
+            <li><a href="index.html">Inicio</a></li>
+
+          </ul>
+        </nav>
+
+
+        <div id="banner">
+          <div className="wrapper style1">
+            <div className="inner">
+              <p>Facundo Hannoch, Software Engineer</p>
+              <h2>Desarrollo de Sitios Web para Restaurantes</h2>
+              <ul className="actions special">
+                <li><a href="" className="button large primary scrolly" onClick={() => ReactGA.event(
+                  {
+                    action: 'Landing Page First button',
+                    category: 'clicks',
+                    label: (new Date()).toString()
+                  }
+                )}>Quiero mi sitio web</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="one" className="features-grid special">
+          <div style={{ background: `url(${food1Img.src})`, ...bgImageStyle }}
+            className="feature bg-image">
+          </div>
+          <div className="feature">
+            <span className="icon fa-star"></span>
+            <h4>Destaca</h4>
+            <p>Tener un sitio web es un paso esencial para que tus clientes sepan quién eres</p>
+          </div>
+          <div style={{ background: `url(${restaurantShot.src})`, ...bgImageStyle }}
+            className="feature bg-image">
+          </div>
+          <div className="feature">
+            <span className="icon fa-heart"></span>
+            <h4>Amet aliquam</h4>
+            <p>Lorem ipsum dolor sit amet nulla blandit aliquam</p>
+          </div>
+          <div style={{ background: `url(${food3Img.src})`, ...bgImageStyle }}
+            className="feature bg-image">
+          </div>
+          <div className="feature">
+            <span className="icon fa-comment"></span>
+            <h4>Aenean lorem</h4>
+            <p>Lorem ipsum dolor sit amet nulla blandit aliquam</p>
+          </div>
+        </div>
+
+
+        <div id="two">
+          <div className="wrapper special">
+            <div className="inner">
+              <header className="heading">
+                <h2>Hosting Gratuito</h2>
+                <p>Podrías pensar que un hosting gratuito sería inestable e inseguro, pero sabemos cómo puedes hacer para que puedas alojar tu sitio web de forma gratuita, estable y segura. Por lo general no se les habla a clientes de estas opciones ya que, primero, es más complejo y no todos saben usarlas; y segundo, es una buena forma de mantenerlos en un ciclo de mantenimiento, costándote mucho dinero al pasar los meses. <br /> Estoy interesado en ayudarte, es por eso que te cuento de estas opciones, por las cuales no te cobraría extra.</p>
+              </header>
+            </div>
+          </div>
+          <div style={{ background: `url(${bannerBlur.src})`, ...bgImageStyle }} className="image major" data-position="center">
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h2>¿Quieres ver cómo puede lucir tu sitio web?</h2>
+              <h3>
+                No esperes más, podrías tenerlo en menos de 2 semanas
+              </h3>
+              <ul className="actions special">
+                <li><a href="#one" className="button large primary scrolly" onClick={() => ReactGA.event(
+                  {
+                    action: '2nd button - Quiero mi sitio web',
+                    category: 'clicks',
+                    label: (new Date()).toString()
+                  }
+                )}>Quiero mi sitio web</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div id="three">
+          <div className="wrapper">
+            <div className="inner">
+              <header className="heading">
+                <h2>Únete a nuestros clientes que ya poseen un sitio web</h2>
+                <p>Varios clientes han confiado en que un sitio web los ayudará, y así ha sido.</p>
+              </header>
+              <div className="stats">
+                <div>
+                  <span className="num">21</span>
+                  <span className="label">Clientes satisfechos</span>
+                </div>
+                <div>
+                  <span className="num">3+</span>
+                  <span className="label">Años de experiencia</span>
+                </div>
+                <div>
+                  <span className="num">50+</span>
+                  <span className="label">Aplicaciones/sitios web creados</span>
+                </div>
+                <div>
+                  <span className="num">Menos de 2 semanas</span>
+                  <span className="label">Para que tengas tu sitio web listo</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div>
+        </div>
+        <div id="four">
+          <div className="wrapper style2">
+            <div className="inner">
+              <header className="heading">
+                <h2>No eres el primer cliente, pero queremos que seas el siguiente</h2>
+                <p>Hemos trabajado con múltiples clientes en multitud de proyectos, y cada uno nos ha permitido aprender y mejorar más nuestro trabajo</p>
+              </header>
+              {
+                showButton &&
+                <>
+                  <h3 style={{ textAlign: 'center' }}>¿Todavía no te convencimos? </h3>
+                  <ul className="actions special">
+                    <li><a href="#one" className="button large primary scrolly" onClick={() => ReactGA.event(
+                      {
+                        action: '3rd button - Get free preview',
+                        category: 'clicks',
+                        label: (new Date()).toString()
+                      }
+                    )}>Obtén una vista previa de tu página GRATIS</a></li>
+                  </ul>
+                </>
+              }
+
+            </div>
+          </div>
+          <Image src={bannerImg} alt='projects' />
+        </div>
+
+
+        <div id="cta">
+          <div className="wrapper style1">
+            <div className="inner">
+              <header className="heading small">
+                <h2>Obtén una consulta gratuita</h2>
+                <p>Discutamos tus necesidades. Sin compromiso.</p>
+              </header>
+              <ContactForm content={content} />
+            </div>
+          </div>
+        </div>
+
+
+        <div id="footer">
+          <div className="wrapper">
+            <div className="inner">
+              <ul className="icons">
+
+
+                <li><a href="https://www.facebook.com/profile.php?id=100092835039159"
+                  className="icon brands fa-facebook-f" target='_blank' onClick={() => ReactGA.event(
+                    {
+                      action: 'facebook icon',
+                      category: 'clicks',
+                      label: (new Date()).toString()
+                    }
+                  )}><span className="label">Facebook</span></a></li>
+
+                <li><a href="mailto:webdesign@facundohannoch.com" className="icon solid fa-envelope" onClick={() => ReactGA.event(
+                  {
+                    action: 'email icon',
+                    category: 'clicks',
+                    label: (new Date()).toString()
+                  }
+                )}><span
+                  className="label">Email</span></a></li>
+              </ul>
+              <div className="copyright">
+                &copy; WebCrafters. All rights reserved.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {/* <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script> */}
+
+      </div>
+
+    </main>
+  );
 
   return (
     <main >
