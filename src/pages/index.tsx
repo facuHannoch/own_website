@@ -17,20 +17,18 @@ import ContactForm from '@/components/contact-form'
 import { useTheme } from 'next-themes'
 
 import ReactGA from 'react-ga4'
-import http from 'http'
-import path from 'path'
 import { useRouter } from "next/router";
-import { useEffect, useState } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
 
-import food1Img from '@/images/food.jpg'
-import food2Img from '@/images/food-hamburguer.jpg'
-import food3Img from '@/images/food-rajesh.jpg'
-import restaurantShot from '@/images/restaurant-shot.jpg'
+const food1Img = '/website-images/food.jpg'
+const food2Img = '/website-images/food-hamburguer.jpg'
+const food3Img = '/website-images/food-rajesh.jpg'
+const restaurantShot = '/website-images/restaurant-shot.jpg'
 import bannerBlur from '@/images/banner-blur.jpg'
-import bannerImg from '@/images/banner.png'
+const bannerImg = '/website-images/banner.png'
+import { GlobeSvg, PaintbrushSvg, StarOutlineSvg, EnvelopeSvg, FacebookSvg } from '../new-design/svg-components'
 
-
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 ReactGA.initialize("G-CMVSL68BHH");
 
@@ -123,9 +121,18 @@ const { tools, experiences, testimonials } = JSON.parse(JSON.stringify(data));
 //   locale: string
 // }
 
-const bgImageStyle = {
+const bgImageStyle: CSSProperties = {
   backgroundPosition: 'center', backgroundSize: 'cover'
 }
+const imageStyle: CSSProperties = {
+  objectFit: 'cover', overflow: 'hidden'
+}
+const svgStyle = {
+  fill: '#e87654', width: '55px'
+}
+
+
+
 export default function Home() {
   const { locale, locales, defaultLocale, asPath, query } = useRouter();
   type locale = keyof typeof landingContent
@@ -195,29 +202,36 @@ export default function Home() {
 
 
         <div id="one" className="features-grid special">
-          <div style={{ background: `url(${food1Img.src})`, ...bgImageStyle }}
+          {/* <div style={{}} */}
+          <div style={{ position: 'relative' }}
             className="feature bg-image">
+            <Image src={food1Img} alt='Foto de un plato con pollo y arroz.' quality={100} fill style={imageStyle} />
           </div>
           <div className="feature">
-            <span className="icon fa-star"></span>
+            <StarOutlineSvg {...svgStyle} />
+            {/* <span className="icon fa-star"></span> */}
             <h4>Destaca</h4>
             <p>Tener un sitio web es un paso esencial para que tus clientes sepan quién eres</p>
           </div>
-          <div style={{ background: `url(${restaurantShot.src})`, ...bgImageStyle }}
+          <div style={{ position: 'relative' }}
             className="feature bg-image">
+            <Image src={restaurantShot} alt='Imagen de un restaurante y el mostrador del mismo.' quality={100} fill style={imageStyle} />
           </div>
           <div className="feature">
-            <span className="icon fa-heart"></span>
-            <h4>Amet aliquam</h4>
-            <p>Lorem ipsum dolor sit amet nulla blandit aliquam</p>
+            <GlobeSvg {...svgStyle} />
+            {/* <span className="icon fa-heart"></span> */}
+            <h4>Impulsa tu presencia en línea</h4>
+            <p>Un sitio web profesional hace que tu restaurante sea más fácil de encontrar y atrae a más clientes.</p>
           </div>
-          <div style={{ background: `url(${food3Img.src})`, ...bgImageStyle }}
+          <div style={{ position: 'relative' }}
             className="feature bg-image">
+            <Image src={food3Img} alt='Fptp de un sánguche con salsa, con buena presentación.' quality={100} fill style={imageStyle} />
           </div>
           <div className="feature">
-            <span className="icon fa-comment"></span>
-            <h4>Aenean lorem</h4>
-            <p>Lorem ipsum dolor sit amet nulla blandit aliquam</p>
+            <PaintbrushSvg {...svgStyle} />
+            {/* <span className="icon fa-comment"></span> */}
+            <h4>Soluciones a medida</h4>
+            <p>Sitios web que reflejen la personalidad y necesidades específicas de tu restaurante.</p>
           </div>
         </div>
 
@@ -231,9 +245,12 @@ export default function Home() {
               </header>
             </div>
           </div>
-          <div style={{ background: `url(${bannerBlur.src})`, ...bgImageStyle }} className="image major" data-position="center">
+          <div style={{ ...bgImageStyle, position: 'relative' }} className="image major" data-position="center">
+            <Image src={bannerBlur} alt='Imagen borrosa.' quality={50} style={{ ...imageStyle }} />
 
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'absolute', top: 0, width: '100%'
+            }}>
               <h2>¿Quieres ver cómo puede lucir tu sitio web?</h2>
               <h3>
                 No esperes más, podrías tenerlo en menos de 2 semanas
@@ -295,11 +312,11 @@ export default function Home() {
                 <p>Hemos trabajado con múltiples clientes en multitud de proyectos, y cada uno nos ha permitido aprender y mejorar más nuestro trabajo</p>
               </header>
               {
-                showButton &&
+                !showButton &&
                 <>
                   <h3 style={{ textAlign: 'center' }}>¿Todavía no te convencimos? </h3>
                   <ul className="actions special">
-                    <li><a href="#one" className="button large primary scrolly" onClick={() => ReactGA.event(
+                    <li><a href="mailto:webdesign@facundohannoch.com?subject=free-design&body=Si tienes una idea de cómo se debería ver tu sitio web, descríbelo aquí. Si no, ¡deja esto en blanco, y trataré de sorprenderte con un diseño que esté a la altura de tu negocio!" className="button large  scrolly" onClick={() => ReactGA.event(
                       {
                         action: '3rd button - Get free preview',
                         category: 'clicks',
@@ -312,7 +329,9 @@ export default function Home() {
 
             </div>
           </div>
-          <Image src={bannerImg} alt='projects' />
+          <div style={{position: 'relative', width: '100%', height: '400px'}}>
+            <Image src={bannerImg} alt='Projects' style={{ ...imageStyle}} fill />
+          </div>
         </div>
 
 
@@ -333,25 +352,26 @@ export default function Home() {
           <div className="wrapper">
             <div className="inner">
               <ul className="icons">
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100092835039159"
+                    className="" target='_blank' onClick={() => ReactGA.event(
+                      {
+                        action: 'facebook icon',
+                        category: 'clicks',
+                        label: (new Date()).toString()
+                      }
+                    )}>
+                    <FacebookSvg {...svgStyle} />
+                  </a></li>
 
-
-                <li><a href="https://www.facebook.com/profile.php?id=100092835039159"
-                  className="icon brands fa-facebook-f" target='_blank' onClick={() => ReactGA.event(
-                    {
-                      action: 'facebook icon',
-                      category: 'clicks',
-                      label: (new Date()).toString()
-                    }
-                  )}><span className="label">Facebook</span></a></li>
-
-                <li><a href="mailto:webdesign@facundohannoch.com" className="icon solid fa-envelope" onClick={() => ReactGA.event(
+                <li><a href="mailto:webdesign@facundohannoch.com?subject=Pongámonos en contacto&body=Cuéntame un poco acerca de tu negocio y tus necesidades, o deja esto en blanco y charlaremos juntos cómo dar el siguiente paso para lograr que tu negocio tenga una presencia online mucho mayor." className="" onClick={() => ReactGA.event(
                   {
                     action: 'email icon',
                     category: 'clicks',
                     label: (new Date()).toString()
                   }
-                )}><span
-                  className="label">Email</span></a></li>
+                )}><EnvelopeSvg className='label' {...svgStyle} />
+                </a></li>
               </ul>
               <div className="copyright">
                 &copy; WebCrafters. All rights reserved.
@@ -371,7 +391,7 @@ export default function Home() {
 
       </div>
 
-    </main>
+    </main >
   );
 
   return (

@@ -31,10 +31,12 @@
 		}
 
 		&.large {
-			font-size: 1.25rem;
-			height: _size(element-height) * 1.15;
-			line-height: _size(element-height) * 1.15;
-			padding: 0 4rem;
+			@include breakpoint('>=small') {
+				font-size: 1.25rem;
+				height: _size(element-height) * 1.15;
+				line-height: _size(element-height) * 1.15;
+				padding: 0 4rem;
+			}
 		}
 
 		&.wide {
