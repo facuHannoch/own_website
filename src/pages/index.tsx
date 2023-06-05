@@ -22,7 +22,7 @@ import { CSSProperties, useEffect, useState } from 'react'
 
 const food1Img = '/website-images/food.jpg'
 const food2Img = '/website-images/food-hamburguer.jpg'
-const food3Img = '/website-images/food-rajesh.jpg'
+const landingImg3 = '/website-images/baked-page.jpg'
 const restaurantShot = '/website-images/restaurant-shot.jpg'
 import bannerBlur from '@/images/banner-blur.jpg'
 const bannerImg = '/website-images/banner.png'
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
           <div style={{ position: 'relative' }}
             className="feature bg-image">
-            <Image src={food3Img} alt='Fptp de un sánguche con salsa, con buena presentación.' fill style={imageStyle} />
+            <Image src={landingImg3} alt='Fptp de un sánguche con salsa, con buena presentación.' fill style={imageStyle} />
           </div>
           <div className="feature">
             <PaintbrushSvg {...svgStyle} />
@@ -329,8 +329,8 @@ export default function Home() {
 
             </div>
           </div>
-          <div style={{position: 'relative', width: '100%', height: '400px'}}>
-            <Image src={bannerImg} alt='Projects' style={{ ...imageStyle}} fill />
+          <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+            <Image src={bannerImg} alt='Projects' style={{ ...imageStyle }} fill />
           </div>
         </div>
 
