@@ -257,7 +257,14 @@ export default function Home() {
               </h3>
               <ul className="actions special">
                 <li><a href="#cta" className="button large primary scrolly" onClick={() => {
-                )}>Quiero mi sitio web</a></li>
+                  ReactGA.event(
+                    {
+                      action: '2nd button - Quiero mi sitio web',
+                      category: 'clicks',
+                      label: (new Date()).toString()
+                    }
+                  )
+                }}>Quiero mi sitio web</a></li>
               </ul>
 
             </div>
