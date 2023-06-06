@@ -188,7 +188,7 @@ export default function Home() {
               <p>Facundo Hannoch, Software Engineer</p>
               <h2>Desarrollo de Sitios Web para Restaurantes</h2>
               <ul className="actions special">
-                <li><a href="" className="button large primary scrolly" onClick={() => ReactGA.event(
+                <li><a href="#cta" className="button large primary scrolly" onClick={() => ReactGA.event(
                   {
                     action: 'Landing Page First button',
                     category: 'clicks',
@@ -256,12 +256,7 @@ export default function Home() {
                 No esperes más, podrías tenerlo en menos de 2 semanas
               </h3>
               <ul className="actions special">
-                <li><a href="#one" className="button large primary scrolly" onClick={() => ReactGA.event(
-                  {
-                    action: '2nd button - Quiero mi sitio web',
-                    category: 'clicks',
-                    label: (new Date()).toString()
-                  }
+                <li><a href="#cta" className="button large primary scrolly" onClick={() => {
                 )}>Quiero mi sitio web</a></li>
               </ul>
 
